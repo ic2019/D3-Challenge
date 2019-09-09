@@ -12,9 +12,15 @@ The data set included with the assignment is based on 2014 ACS 1-year estimates:
 
 ## Task
 
-### Level 1: D3 Dabbler
+### Level 1: D3 
 
-![plot1](Images/plot1.jpg)
+#### Poverty Vs Healthcare
+
+![plot1](Images/plot1.png)
+
+#### Age Vs Smokes
+
+![plot2](Images/plot2.png)
 
 - - -
 
