@@ -1,16 +1,16 @@
 // Defining svg width and height
-var svgWidth = 960;
-var svgHeight = 500;
+const svgWidth = 960;
+const svgHeight = 500;
 
-var margin = {
+const margin = {
     top: 20,
     right: 120,
     bottom: 90,
     left: 120
 };
 
-var width = svgWidth - margin.left - margin.right;
-var height = svgHeight - margin.top - margin.bottom;
+const width = svgWidth - margin.left - margin.right;
+const height = svgHeight - margin.top - margin.bottom;
 
 // Create an SVG wrapper, append an SVG group that will hold our chart,
 // and shift the latter by left and top margins
@@ -29,6 +29,9 @@ var scatterGroup = svg.append("g")
 var chosenXAxis = "poverty";
 var chosenYAxis = "healthcare";
 
+/* Defining all functions */
+/***************************/
+/****************************/
 // function used for updating x-scale var upon click on axis label
 function xScale(healthData, chosenXAxis) {
     // create scales
@@ -129,15 +132,14 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup) {
     return circlesGroup;
   }
 
-  /**
+  /******
    * End of functions
-   */
+   *****/
   // Retrieve data from the CSV file and execute everything 
-  url = "assets/data/data.csv";
+  const url = "assets/data/data.csv";
   d3.csv(url).then(healthData => {
   //, function(err, data) {
-    //if (error) throw error;
-    //healthData = data;
+    
     console.log(healthData);
     // parse data
     healthData.forEach(function(data) {
@@ -307,7 +309,7 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup) {
 
          }
       });
-
+      // Y axis label listenr
       labelsGroupY.selectAll("text")
       .on("click", function() {
         // get value of selection
@@ -367,7 +369,10 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup) {
 
 
       // End of event listener action for x axis
-  });
+  })
+  .catch(function(error){
+    // handle error   
+ })
 
 
 
